@@ -1,7 +1,7 @@
 import React, { FC } from 'react';
 import { Text, View, StyleSheet  } from 'react-native';
 import tailwind from 'tailwind-rn';
-import { Calendar } from 'react-native-calendars';
+import Calendar  from 'react-native-calendar-range-picker';
 
 
 
@@ -10,21 +10,19 @@ const App: FC = () => {
 
   return (
     <View style={styles.container}>
-      <Text style={styles.header}> CALENDAR </Text>
-
-      <Calendar
-        enableSwipeMonths
-        current={INITIAL_DATE}
-        // markingType={''}
-        markedDates={{
-          '2021-12-22': { selected: true, marked: false, selectedColor: "#FFD42A", textColor: 'black' },
-          // '2021-12-23': { selected: true, startingDay: false, color: "teal", textColor: 'black' },
-          // '2021-12-24': { selected: true, startingDay: false, color: "teal", textColor: 'black' },
-          // '2021-12-25': { selected: true, startingDay: false, color: "teal", textColor: 'black' },
-          '2021-12-26': { selected: true, endingDay: true, textColor: 'black', selectedColor: "#FFD42A" },
-        }}
-      >
-      </Calendar>
+      <Text style={styles.header}> CALENDAR 
+      </Text>
+      <Calendar 
+      startDate='2021-12-14'
+      endDate='2021-12-23'
+      onChange={({startDate, endDate}) => console.log({startDate, endDate})}
+      style={{
+        todayColor: 'blue',
+        selectedDayBackgroundColor: '#FFD42A',
+        selectedBetweenDayBackgroundTextColor: '#ffe580'
+      }}
+      />
+    
     </View>
 
   )
@@ -44,6 +42,7 @@ header:{
   fontSize: 30,
   fontWeight: "bold",
 },
+
 })
 
 export default App;
