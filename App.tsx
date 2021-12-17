@@ -1,7 +1,6 @@
 import React, { FC } from 'react';
 import { Text, View, StyleSheet  } from 'react-native';
-import tailwind from 'tailwind-rn';
-import Calendar  from 'react-native-calendar-range-picker';
+import UsedCalendar from './Calendar';
 
 
 
@@ -12,18 +11,8 @@ const App: FC = () => {
     <View style={styles.container}>
       <Text style={styles.header}> CALENDAR 
       </Text>
-      <View style={{backgroundColor: '#212431'}}>
-        <Calendar
-          startDate='2021-12-14'
-          endDate='2021-12-23'
-          onChange={({ startDate, endDate }) => console.log({ startDate, endDate })}
-          style={{
-            todayColor: 'blue',
-            selectedDayBackgroundColor: '#FFD42A',
-            selectedBetweenDayBackgroundTextColor: '#ffe58033'
-          }}
-        />
-      </View>
+    
+    <UsedCalendar/>
   
     
     </View>
