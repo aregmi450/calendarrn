@@ -12,16 +12,19 @@ const App: FC = () => {
     <View style={styles.container}>
       <Text style={styles.header}> CALENDAR 
       </Text>
-      <Calendar 
-      startDate='2021-12-14'
-      endDate='2021-12-23'
-      onChange={({startDate, endDate}) => console.log({startDate, endDate})}
-      style={{
-        todayColor: 'blue',
-        selectedDayBackgroundColor: '#FFD42A',
-        selectedBetweenDayBackgroundTextColor: '#ffe580'
-      }}
-      />
+      <View style={{backgroundColor: '#212431'}}>
+        <Calendar
+          startDate='2021-12-14'
+          endDate='2021-12-23'
+          onChange={({ startDate, endDate }) => console.log({ startDate, endDate })}
+          style={{
+            todayColor: 'blue',
+            selectedDayBackgroundColor: '#FFD42A',
+            selectedBetweenDayBackgroundTextColor: '#ffe58033'
+          }}
+        />
+      </View>
+  
     
     </View>
 
